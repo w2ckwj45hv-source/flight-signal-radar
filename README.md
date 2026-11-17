@@ -2,6 +2,8 @@
 
 Ein kostenloses regionales Flugbeobachtungsprojekt. Echte Positionen im Umkreis von 100 nautischen Meilen um Frankfurt, ein Logbuch und vorsichtige Vergleiche derselben UTC-Stunde desselben Wochentags. Keine Börsenprognose und kein vollständiger Flugplan.
 
+**[Radar öffnen](https://w2ckwj45hv-source.github.io/flight-signal-radar/)** · [Quellcode und automatische Läufe](https://github.com/w2ckwj45hv-source/flight-signal-radar)
+
 ## Start auf diesem Windows-PC
 
 **`Radar starten.cmd` doppelklicken.** Es öffnet `http://127.0.0.1:8765`. Der Sammler läuft im Hintergrund alle 30 Minuten, solange der PC läuft. **`Radar stoppen.cmd`** beendet den eigenen Prozess. Nach einem Neustart erneut starten. Es werden keine Autostarts oder Windows-Aufgaben heimlich installiert.
@@ -48,4 +50,3 @@ Bei Startproblemen `.local/error.log` ansehen. Port 8765 kann bereits belegt sei
 Flugdatensatz von [adsb.lol](https://www.adsb.lol), verfügbar unter [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/). Der normalisierte Bestand einschließlich abgeleiteter Zählreihen steht ebenfalls unter ODbL 1.0 und ist auf der Webseite herunterladbar. Anwendungscode: MIT. Details, aktuelle Quellenprüfung und Gratisbudget: [docs/sources.md](docs/sources.md).
 
 Ein erster echter Abruf ist geprüft; Zuverlässigkeit über 24–72 Stunden, achtwöchige Vergleichsbasis und Telegram-Empfang sind gesonderte Abnahmekriterien. Es gibt keine erfundenen historischen Beobachtungen, Testtreffer oder versandten Nachrichten.
-

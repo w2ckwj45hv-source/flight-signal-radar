@@ -39,4 +39,3 @@ Stand: 17.11.2026. Die Prüfung betrifft dieses nichtkommerzielle Lernprojekt. K
 ## Noch offene Nachweise
 
 Ein echter 24–72-Stunden-Test, langfristige Abdeckung und echte Ereignisse benötigen fortlaufende Sammlung. Acht frühere Wochen für denselben Wochentag und dieselbe UTC-Stunde lassen sich nicht durch erfundene Trainingsdaten ersetzen. Ein erfolgreicher erster Abruf ist keine Zuverlässigkeitsmessung.
-

@@ -12,8 +12,12 @@
 
 ## Noch laufend/offen
 
-Öffentlicher Workflow und Pages-Bereitstellung werden separat nachgewiesen. Ein 24–72-Stunden-Test ist noch nicht abgelaufen. Telegram-Empfang benötigt einen eingerichteten Bot und Empfänger; ohne diese Daten wurde keine Nachricht versandt. Acht passende frühere Wochen fehlen erwartungsgemäß.
+Erster öffentlicher Workflow erfolgreich: https://github.com/w2ckwj45hv-source/flight-signal-radar/actions/runs/44185360052. Er hat den kurz zuvor lokal gespeicherten Zustand innerhalb der Abrufpause korrekt weiterverwendet; dies allein belegt noch keinen neuen Quellenabruf in der Cloud. Pages-Bereitstellung erfolgreich: https://github.com/w2ckwj45hv-source/flight-signal-radar/actions/runs/44185373782. Öffentliche Seite und Datenabruf aus main auf Desktop und Handy geprüft: https://w2ckwj45hv-source.github.io/flight-signal-radar/.
+
+Der nächste Lauf wird auf einen tatsächlich neu erfassten Quellenzeitpunkt geprüft. Ein 24–72-Stunden-Test ist noch nicht abgelaufen. Telegram-Empfang benötigt einen eingerichteten Bot und Empfänger; ohne diese Daten wurde keine Nachricht versandt. Acht passende frühere Wochen fehlen erwartungsgemäß.
 
 ## Betriebsentscheidung
 
 Der Sammler erzeugt keine Actions-Artefakte oder Caches. Pages rendert eine feste statische Oberfläche, die den aktuellen JSON-Datenstand aus main nachlädt. Diese Vereinfachung vermeidet kontoweiten Artefaktspeicher im laufenden Sammler. Alle Daten in öffentlichen Projektdateien stammen aus der öffentlichen Quelle oder aus ausdrücklich künstlichen Test-Fixtures; keine persönlichen Vault-Inhalte.
+
+Das einmalige Pages-Build-Paket (16.115 Bytes) wurde nach dem erfolgreichen Deployment entfernt; danach waren keine Artefakte in diesem Repository gespeichert. Private lokale Endpunkte geprüft: Aktualisierung ohne passende Herkunft wurde mit HTTP 403 abgewiesen; Zugriff auf collector.py mit HTTP 404. Der lokale Sammler wurde nach Einrichtung der Cloud beendet, damit nicht zwei Betriebswege parallel sammeln.

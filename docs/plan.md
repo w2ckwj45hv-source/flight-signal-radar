@@ -20,5 +20,9 @@ Gestaltung: Papier #F5F1E8, Petrol #123F46, Türkis #147D79, Text #183036. Georg
 ## Kritische Prüfpunkte
 Ungültige Antworten dürfen gültigen Stand nicht ersetzen. Wiederholungen innerhalb desselben Messslots erhöhen nicht die Abdeckung. Der aktuelle unvollständige Stundenblock zählt nicht als Ereignis. Baselines stammen ausschließlich aus früheren Zeitfenstern. Positionen und Quellenzeit müssen frisch sein. Fehlende Daten sind kein Rückgangssignal. Geheimnisse stehen nie im Webordner oder Fehlerprotokoll.
 
+## Umsetzungsstand
+
+Die aufgeführten Dateien und Prüfungen sind umgesetzt. Alle vier wichtigen Befunde einer unabhängigen Schlussprüfung wurden behoben und mit Regressionstests beziehungsweise dem echten Workflow geprüft. Öffentlicher Pages-Zweig und Sammler sind eingerichtet, ohne Actions-Artefakte im laufenden Sammler. Die Bedienung ist bei 390, 768, 1024 und 1440 Pixel geprüft. Siehe verification.md für konkrete Nachweise.
+
 ## Noch nicht abnehmbar
-24–72 Stunden Zuverlässigkeit und acht Wochen Baseline benötigen echte Laufzeit. Telegram benötigt einen vom Nutzer eingerichteten Bot und Chat. Öffentliche Bereitstellung und automatischer Cloudbetrieb sind ohne eingerichtetem Zielkonto nicht nachgewiesen. Keine Börsenprognosen.
+24–72 Stunden Zuverlässigkeit und acht Wochen Baseline benötigen echte Laufzeit. Telegram benötigt einen vom Nutzer eingerichteten Bot und Chat. Keine Börsenprognosen.
