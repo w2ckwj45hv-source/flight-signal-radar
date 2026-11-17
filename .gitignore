@@ -1,0 +1,8 @@
+__pycache__/
+.local/
+.env*
+!.env.example
+network-check.json
+web/data/*.tmp
+*.log
+qa/

@@ -1,0 +1,5 @@
+Contains information from adsb.lol, https://www.adsb.lol, available under the
+Open Data Commons Open Database License (ODbL) 1.0.
+The normalized database and derived counts are available under the same license.
+License text: https://opendatacommons.org/licenses/odbl/1-0/
+Database download: state.json in this directory.

@@ -1,0 +1,57 @@
+name: Flugbeobachtung sammeln
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17,47 * * * *'
+  push:
+    branches: [main]
+    paths-ignore: ['web/data/**', 'runtime/**', 'docs/**', 'README.md']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-collection-and-pages
+  cancel-in-progress: false
+
+jobs:
+  observe:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Speicherbudget prüfen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          size=$(gh api "repos/$GITHUB_REPOSITORY" --jq .size)
+          test "$size" -lt 50000 || { echo '50-MB-Projektgrenze erreicht. Sammlung angehalten.'; exit 1; }
+      - name: Entscheidendende Prüfungen
+        run: python3 -m unittest discover -s tests -v
+      - name: Daten sammeln
+        run: |
+          if python3 collector.py; then
+            echo 'Quellenantwort geprüft.'
+          else
+            echo 'Abruf fehlgeschlagen; der dokumentierte letzte Stand wird veröffentlicht.'
+          fi
+      - name: Optionale Ereignisnachricht
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RADAR_PUBLIC_URL: https://${{ github.repository_owner }}.github.io/flight-signal-radar/
+        run: |
+          if ! python3 notify.py --ledger runtime/sent.json; then
+            echo '::warning::Telegram nicht bestätigt. Radar wird trotzdem veröffentlicht.'
+          fi
+      - name: Geprüften Stand sichern
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add web/data/state.json
+          if test -f runtime/sent.json; then git add runtime/sent.json; fi
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: update verified regional observation'
+            git push
+          fi
