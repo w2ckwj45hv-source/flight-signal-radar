@@ -14,7 +14,9 @@
 
 Erster öffentlicher Workflow erfolgreich: https://github.com/w2ckwj45hv-source/flight-signal-radar/actions/runs/44185360052. Er hat den kurz zuvor lokal gespeicherten Zustand innerhalb der Abrufpause korrekt weiterverwendet; dies allein belegt noch keinen neuen Quellenabruf in der Cloud. Pages-Bereitstellung erfolgreich: https://github.com/w2ckwj45hv-source/flight-signal-radar/actions/runs/44185373782. Öffentliche Seite und Datenabruf aus main auf Desktop und Handy geprüft: https://w2ckwj45hv-source.github.io/flight-signal-radar/.
 
-Der nächste Lauf wird auf einen tatsächlich neu erfassten Quellenzeitpunkt geprüft. Ein 24–72-Stunden-Test ist noch nicht abgelaufen. Telegram-Empfang benötigt einen eingerichteten Bot und Empfänger; ohne diese Daten wurde keine Nachricht versandt. Acht passende frühere Wochen fehlen erwartungsgemäß.
+Neuer echter Quellenabruf in GitHub Actions am 17.11.2026 um 23:02:32 Uhr Europe/Berlin: 39 geprüfte Positionen, neuer Quellen- und Abrufzeitpunkt, Status ok, Bot-Commit 0ef4f5a. Erfolgreicher Lauf: https://github.com/w2ckwj45hv-source/flight-signal-radar/actions/runs/44186015134. Damit ist nicht nur der Workflowstart, sondern auch ein neuer Cloudabruf nachgewiesen. Die Zahl ist eine Momentaufnahme, keine aktuelle Dauerzahl.
+
+Ein 24–72-Stunden-Test ist noch nicht abgelaufen. Telegram-Empfang benötigt einen eingerichteten Bot und Empfänger; ohne diese Daten wurde keine Nachricht versandt. Acht passende frühere Wochen fehlen erwartungsgemäß.
 
 ## Betriebsentscheidung
 
